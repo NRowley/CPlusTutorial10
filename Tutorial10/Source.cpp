@@ -23,6 +23,10 @@ public:
 	void Speak();
 };
 
+class Lab : public Dog {
+
+};
+
 int main() {
 
 	Animal animal;
@@ -33,6 +37,11 @@ int main() {
 
 	Dog dog("Halen", 6, 4);
 	dog.Speak();
+
+	Lab lab;
+	lab.Speak();
+	lab.report();
+
 	system("pause");
 }
 
@@ -59,8 +68,7 @@ Dog::Dog() {
 	cout << "Dog is born" << endl;
 }
 
-Dog::Dog(string Name, int Age, int Limbs){
-	Animal(Name, Age, Limbs);
+Dog::Dog(string Name, int Age, int Limbs):Animal(Name, Age, Limbs) {
 }
 
 void Dog::Speak() {
